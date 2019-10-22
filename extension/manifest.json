@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "KbzChromeRP",
+  "version": "1.0",
+  "description": "This is a Google Chrome Discord Rich Presence extention created by Kbz!",
+  "icons": {
+
+    "128": "Chrome128.png",
+    "48": "Chrome48.png",
+    "16": "Chrome16.png"
+
+  },
+  "browser_action": {
+
+    "default_icon": "Chrome48.png",
+    "default_popup": "popup.html"
+
+  },
+  "background": {
+    "scripts": [ "vendor/jquery/jquery-3.2.1.min.js" ,"scripts/background.js" ],
+    "persistent": true
+  },
+  "permissions": [ "http://localhost/*", "activeTab", "tabs", "background" ]
+}

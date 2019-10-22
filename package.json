@@ -1,0 +1,17 @@
+{
+  "name": "kbz-chrome-rp",
+  "version": "1.0.0",
+  "description": "KbzChromeRP",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": {
+    "name": "Kbz"
+  },
+  "dependencies": {
+    "browserify": "^16.5.0",
+    "discord-rpc": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}
