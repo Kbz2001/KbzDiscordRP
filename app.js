@@ -1,5 +1,5 @@
 const express = require('express');
-const discordRPC = require('discord-rpc')
+const discordRPC = require('discord-rpc');
 const clientID = '584594920745074688';
 const rpc = new discordRPC.Client({ transport: 'ipc' });
 
@@ -20,6 +20,7 @@ rpc.once('ready', () => {
                 startTimestamp: new Date(),
                 instance: true
             };
+
             rpc.setActivity(presence);
         } else if (body.action == "clear") {
             rpc.clearActivity();
@@ -30,3 +31,15 @@ rpc.once('ready', () => {
     app.listen(3000, () => console.log('Discord-Chrome-Presence is ready!'));
 
 });
+
+/*
+
+**Ignore these comments they are for the developer**
+
+Use "npm start" in project directory BEFORE loading Chrome extension. (This opens the localhost server).
+
+Use npm list -g --depth=0 to see ALL currently installed npm packages.
+
+Use pm2 to launch 24/7 localhost server.
+
+ */

@@ -31,6 +31,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                 updatePresence(tab, 'Storing Files', 'drivebig', 'Google Drive', smallImg, smallTxt);
                 hostFound = true;
                 break;
+            case 'github.com':
+                updatePresence(tab, 'Coding', 'githubbig', 'GitHub', smallImg, smallTxt);
+                hostFound = true;
+                break;
+
             default:
                 hostFound = false;
                 break;
@@ -60,7 +65,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     }
 });
 
-chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+chrome.tabs.onRemoved.addListener(function (tabId) {
 
     var hostFound;
     var urlFound;
@@ -80,6 +85,11 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
             hostFound = true;
             updatePresence(null);
             break;
+        case 'github.com':
+            hostFound = true;
+            updatePresence(null);
+            break;
+
         default:
             hostFound = false;
     }
@@ -101,7 +111,6 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 
     } else if (!hostFound && !urlFound) {
         updatePresence(null);
-        console.log('THIS WAS A DEFAULT PRESENCE!');
 
     }
 });
@@ -140,6 +149,7 @@ function updatePresence(tab, dets, largeImgKey, largeImgTxt, smallImgKey, smallI
     }
 
     $.ajax(settings);
+
 }
 
 function setDefaultPresence(tab) {
@@ -176,4 +186,5 @@ function setDefaultPresence(tab) {
     }
 
     $.ajax(settings);
+
 }
