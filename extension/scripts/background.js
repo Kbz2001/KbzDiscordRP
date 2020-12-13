@@ -35,7 +35,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                 updatePresence(tab, 'Coding', 'githubbig', 'GitHub', smallImg, smallTxt);
                 hostFound = true;
                 break;
-
             default:
                 hostFound = false;
                 break;
@@ -55,6 +54,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         } else if (theURL.toString().indexOf('https://docs.google.com/spreadsheets/') !== -1) {
 
             updatePresence(tab, 'Calculating', 'sheetsbig', 'Google Sheets', smallImg, smallTxt);
+            urlFound = true;
+
+        } else if(theURL.toString().indexOf('https://www.geoguessr.com/game/') !== -1) {
+
+            updatePresence(tab, 'Exploring the World', 'geoguessrbig', 'GeoGuessr', smallImg, smallTxt);
             urlFound = true;
 
         } else if (!hostFound && !urlFound) {
@@ -105,6 +109,11 @@ chrome.tabs.onRemoved.addListener(function (tabId) {
         urlFound = true;
 
     } else if (url.toString().indexOf('https://docs.google.com/spreadsheets/') !== -1) {
+
+        updatePresence(null);
+        urlFound = true;
+
+    } else if(url.toString().indexOf('https://www.geoguessr.com/game/') !== -1) {
 
         updatePresence(null);
         urlFound = true;

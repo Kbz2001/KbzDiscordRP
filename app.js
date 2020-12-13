@@ -36,10 +36,11 @@ rpc.once('ready', () => {
 
 **Ignore these comments they are for the developer**
 
-Use "npm start" in project directory BEFORE loading Chrome extension. (This opens the localhost server).
+Use "npm start" in project directory BEFORE loading Chrome extension. (This opens the localhost server) >>> ONLY FOR TESTING.
+To load extension, upload "extension" file in directory to Chrome Extensions page using "Load Unpacked".
 
 Use npm list -g --depth=0 to see ALL currently installed npm packages.
 
-Use pm2 to launch 24/7 localhost server.
+Use pm2 to launch 24/7 localhost server (In project directory: Cmd Prompt -> "pm2 start app.js") >>> ONLY FOR DEPLOYING.
 
  */
